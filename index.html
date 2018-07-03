@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Buoy App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>BUOY APP</h1>
+    <form action="">
+        <h2>Add a Buoy</h2>
+        Buoy name: <input type="text" autocomplete="off" required />
+        Latitude: <input name="latitude" type="number" step="0.001" min="-90.0" max="90.0" autocomplete="off" required />
+        Longitude: <input name="longitude" type="number" step="0.001" min="-180.0" max="180.0" autocomplete="off" required />
+        <button>Send</button>
+    </form>
+</body>
+</html>
