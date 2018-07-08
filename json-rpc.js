@@ -6,7 +6,7 @@ var JSON_RPC = {};
   var id = 0;
 
   /**
-   * Contructs a new JSON-RPC Request
+   * Contructs a new JSON-RPC Request object
    * @param {String} method - A String containing the name of the method to be invoked.
    * @param {*}[params] - A Structured value that holds the parameter values to be used during the invocation of the method
    */
@@ -64,8 +64,8 @@ var JSON_RPC = {};
   }
 
   /**
-   * Constructs a new JSON-RPC Notification
-   *  
+   * Constructs a new JSON-RPC Notification object
+   *
    * @param {String} method - A String containing the name of the method to be invoked.
    * @param {*} [params] - A Structured value that holds the parameter values to be used during the invocation of the method.
    */
@@ -74,15 +74,15 @@ var JSON_RPC = {};
     this.method = method;
     if (typeof params !== "undefined") {
       this.params = params;
-    } 
+    }
   }
 
   /**
    * Constructs a new JSON-RPC Error Object
-   * 
+   *
    * @param {number} code - A Number that indicates the type of error occurred.
    * @param {string} message - A String providing a short description of the error.
-   * @param {*} [data] - A Primitive or Structured value that contains additional information about the error. 
+   * @param {*} [data] - A Primitive or Structured value that contains additional information about the error.
    */
   RPC.Error = (code, message, data) => {
     this.code = code;
