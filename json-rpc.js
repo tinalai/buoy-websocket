@@ -58,7 +58,7 @@ var JSON_RPC = {};
     if (this.method !== undefined ) rpc.method = this.method;
     if (this.params !== undefined ) rpc.params = this.params;
     if (this.result !== undefined ) rpc.result = this.result;
-    if (this.result !== undefined ) rpc.result = this.result;
+    if (this.error !== undefined ) rpc.result = this.error;
 
     return JSON.stringify(rpc);
   }
@@ -98,16 +98,14 @@ var JSON_RPC = {};
    * Pre-defined Errors
    */
 
-    RPC.Parse_error = new RPC.Error(-32700, "An error occurred on the server while parsing the JSON text.");
+  RPC.Parse_error = new RPC.Error(-32700, "An error occurred on the server while parsing the JSON text.");
 
-    RPC.Invalid_request = new RPC.Error(-32600, "The JSON sent is not a valid Request object.");
+  RPC.Invalid_request = new RPC.Error(-32600, "The JSON sent is not a valid Request object.");
 
-    RPC.Method_not_found = new RPC.Error(-32601, "The method does not exist / is not available.");
+  RPC.Method_not_found = new RPC.Error(-32601, "The method does not exist / is not available.");
 
-    RPC.Invalid_params = new RPC.Error(-32602, "Invalid method parameter(s).");
+  RPC.Invalid_params = new RPC.Error(-32602, "Invalid method parameter(s).");
 
-    RPC.Internal_error = new RPC.Error(-32603, "Internal JSON-RPC error.");
+  RPC.Internal_error = new RPC.Error(-32603, "Internal JSON-RPC error.");
 
-
-})
-
+});
