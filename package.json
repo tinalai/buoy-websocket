@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/tinalai/buoy-websocket.git"
   },
-  "author": "",
+  "author": "Tina Lai <contact.tinalai@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tinalai/buoy-websocket/issues"

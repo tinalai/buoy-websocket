@@ -1,6 +1,4 @@
-var JSON_RPC = {};
-
-(() => {
+const JSON_RPC = function() {
   "use strict";
 
   var id = 0;
@@ -10,7 +8,7 @@ var JSON_RPC = {};
    * @param {String} method - A String containing the name of the method to be invoked.
    * @param {*}[params] - A Structured value that holds the parameter values to be used during the invocation of the method
    */
-  RPC.Request = (method, params) => {
+  RPC.Request = function (method, params) {
     this.jsonrpc = "2.0";
     this.method = method;
     if (typeof params !== "undefined") {
@@ -25,8 +23,8 @@ var JSON_RPC = {};
    * Implement getter and setter for the result of a JSON-RPC Request.
    */
   Object.defineProperty(RPC.Request, 'result', {
-    get: () => { return this._result},
-    set: result => {
+    get: function() { return this._result },
+    set: function (result) {
       delete this.method;
       delete this.params;
       delete this.error;
@@ -38,8 +36,8 @@ var JSON_RPC = {};
    * Implement getter and setter for a JSON-RPC Request error.
    */
   Object.defineProperty(RPC.Request, 'error', {
-    get: () => { return this._error},
-    set: error => {
+    get: function () { return this._error},
+    set: function (error) {
       delete this.method;
       delete this.params;
       delete this.result;
@@ -50,7 +48,7 @@ var JSON_RPC = {};
   /**
    * Return a String representation of a JSON-RPC Request.
    */
-  RPC.Request.prototype.toString = () => {
+  RPC.Request.prototype.toString = function () {
     var rpc = {
       jsonrpc: this.jsonrpc,
       id: this.id
@@ -69,7 +67,7 @@ var JSON_RPC = {};
    * @param {String} method - A String containing the name of the method to be invoked.
    * @param {*} [params] - A Structured value that holds the parameter values to be used during the invocation of the method.
    */
-  RPC.Notification = (method, params) => {
+  RPC.Notification = function (method, params) {
     this.jsonrpc = "2.0";
     this.method = method;
     if (typeof params !== "undefined") {
@@ -84,7 +82,7 @@ var JSON_RPC = {};
    * @param {string} message - A String providing a short description of the error.
    * @param {*} [data] - A Primitive or Structured value that contains additional information about the error.
    */
-  RPC.Error = (code, message, data) => {
+  RPC.Error = function (code, message, data) {
     this.code = code;
     if ( typeof message === "string") {
       this.message = message;
@@ -108,4 +106,7 @@ var JSON_RPC = {};
 
   RPC.Internal_error = new RPC.Error(-32603, "Internal JSON-RPC error.");
 
-});
+
+};
+
+module.exports = JSON_RPC;

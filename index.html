@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Buoy App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Buoy App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" />
 </head>
+
 <body>
-    <h1>BUOY APP</h1>
-    <form action="">
-        <h2>Add a Buoy</h2>
-        Buoy name: <input type="text" autocomplete="off" required />
-        Latitude: <input name="latitude" type="number" step="0.001" min="-90.0" max="90.0" autocomplete="off" required />
-        Longitude: <input name="longitude" type="number" step="0.001" min="-180.0" max="180.0" autocomplete="off" required />
-        <button type="submit">Send</button>
+  <h1>BUOY APP</h1>
+
+  <div class="addBuoy">
+    <h2>Add a Buoy</h2>
+    <form>
+      <div>
+        <label for="name">Buoy name:</label>
+        <input type="text" id="name" name="buoy_name" autocomplete="off" required />
+      </div>
+      <div>
+        <label for="latitude">Latitude:</label>
+        <input type="number" id="latitude" name="buoy_latitude" step="0.001" min="-90.0" max="90.0" autocomplete="off" required /> 
+      </div>
+      <div>
+        <label for="longitude">Longitude:</label>
+        <input type="number" id="longitude" name="buoy_longitude" step="0.001" min="-180.0" max="180.0" autocomplete="off" required />
+      </div>
+      <button type="submit" id="addBuoyButton">Add buoy</button>
     </form>
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/client.js"></script>
+  </div>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/client.js"></script>
 </body>
+
 </html>
