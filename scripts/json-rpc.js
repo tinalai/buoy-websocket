@@ -1,4 +1,5 @@
-const JSON_RPC = function() {
+var RPC = {};
+(function() {
   "use strict";
 
   var id = 0;
@@ -107,6 +108,6 @@ const JSON_RPC = function() {
   RPC.Internal_error = new RPC.Error(-32603, "Internal JSON-RPC error.");
 
 
-};
+})();
 
-module.exports = JSON_RPC;
+module.exports = RPC;
